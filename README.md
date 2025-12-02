@@ -13,7 +13,7 @@ Sistema completo de gestão de alunos, cursos e matrículas desenvolvido com **D
 
 ### 📊 Dashboards e Relatórios
 - Painel Financeiro (Total pago/devido por aluno)
-- Dashboard Geral (Totais, Gráficos com Chart.js)
+- Dashboard Geral
 - Histórico Detalhado do Aluno
 
 ### 🔌 API REST (DRF)
@@ -44,12 +44,13 @@ Sistema completo de gestão de alunos, cursos e matrículas desenvolvido com **D
 ## 🚀 Como Rodar o Projeto (Docker)
 
 ### Pré-requisitos
-- Docker Engine instalado ([Download aqui](https://www.docker.com/get-started))
+- Docker instalado ([Download aqui](https://www.docker.com/get-started))
 - Docker Compose (geralmente já vem com o Docker Desktop)
 
 ### Passo 1: Clone o Repositório
 
 git clone https://github.com/heitorpita/desafio_python_tecnotech.git
+
 cd desafio_python_tecnotech
 
 ### Passo 2: Suba os Containers
@@ -64,10 +65,15 @@ docker-compose up --build
 ### Frontend (HTML)
 
 | Lista de Alunos | http://localhost:8000/alunos/ | 
+
 | Lista de Cursos | http://localhost:8000/cursos/ | 
+
 | Lista de Matrículas | http://localhost:8000/matriculas/ | 
+
 | Dashboard Geral | http://localhost:8000/matriculas/dashboard/ |
+
 | Painel Financeiro | http://localhost:8000/matriculas/financeiro/ | 
+
 | Histórico do Aluno (ID 1) | http://localhost:8000/matriculas/relatorio/aluno/1/ | 
 
 ### API (JSON)
