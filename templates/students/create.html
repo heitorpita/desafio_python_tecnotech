@@ -1,0 +1,10 @@
+<h1>Novo Aluno</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="nome" placeholder="Nome">
+    <input type="email" name="email" placeholder="Email">
+    <input type="text" name="cpf" placeholder="CPF">
+    <input type="date" name="data_ingresso">
+    <button type="submit">Salvar</button>
+</form>

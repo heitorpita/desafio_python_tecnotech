@@ -1,0 +1,12 @@
+<h1>Alunos</h1>
+<a href="{% url 'student_create' %}">Novo Aluno</a>
+
+<ul>
+{% for aluno in students %}
+    <li>
+        {{ aluno.nome }} — {{ aluno.email }} 
+        <a href="{% url 'student_edit' aluno.id %}">Editar</a>
+        <a href="{% url 'student_delete' aluno.id %}">Excluir</a>
+    </li>
+{% endfor %}
+</ul>

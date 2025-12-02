@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # Serviço do Banco de Dados
+  db:
+    image: postgres:15-alpine
+    container_name: tecnotech_db
+    environment:
+      - POSTGRES_DB=escola_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"  # Expõe a porta pro seu computador
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Serviço da Aplicação Django
+  web:
+    build: .
+    container_name: tecnotech_web
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app  # Sincroniza sua pasta local com o container (Hot Reload)
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy # Só inicia o Django quando o banco estiver pronto
+    environment:
+      - SECRET_KEY=django-insecure-chave-docker-12345
+      - DEBUG=True
+      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+      - DB_NAME=escola_db
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=db  
+      - DB_PORT=5432
+
+volumes:
+  postgres_data:
