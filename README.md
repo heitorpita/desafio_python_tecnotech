@@ -37,7 +37,6 @@ Sistema completo de gestão de alunos, cursos e matrículas desenvolvido com **D
 | PostgreSQL | 15 | Banco de dados |
 | Docker & Docker Compose | 24+ | Containerização |
 | Bootstrap | 5.3 | Interface frontend |
-| Chart.js | 4.0 | Gráficos |
 
 ---
 
