@@ -1,0 +1,39 @@
+# ---> Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.sqlite3
+
+# Environment
+.env
+*.env
+venv/
+.venv/
+
+# Django stuff
+staticfiles/
+media/
+*.log
+local_settings.py
+
+# Migrations (opcional: mantenha somente se quiser limpar)
+#*/migrations/*
+#!*/migrations/__init__.py
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Byte-compiled
+*.pyc
+
+# IDE
+.idea/
+
+# Docker
+docker-data/
